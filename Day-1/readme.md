@@ -12,7 +12,7 @@
 ### add element to list
 ### replace element of a list with new value 
 ### checking whether the value exist or not
-##### enumerate is used to replace range or to get get index and the value both
+### enumerate is used to replace range or to get get index and the value both
 ### shallow copy that is making a subset or the whole set
 ### checking whether truely eleminating the element which have not added in subset
 ### striding that is jumping number how much gap should be there
