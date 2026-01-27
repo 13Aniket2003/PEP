@@ -77,7 +77,7 @@
 
 # if __name__ =='__main__':main()
         
-### classes
+### Methods
 
 # class animal:
 #   def __init__(self,**kwargs):
@@ -105,4 +105,60 @@
 #   print(a2)
 # if __name__=='__main__':
 #   main()
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+### Inheritance
+
+# class Animal:
+#     def _init_(self, **kwargs):
+#         if 'type' in kwargs: self._type = kwargs['type']
+#         if 'name' in kwargs: self._name = kwargs['name']
+#         if 'sound' in kwargs: self._sound = kwargs['sound']
+
+#     def type(self, t = None):
+#         if t: self.__type = t
+#         try: return self._type
+#         except AttributeError: return None
+
+#     def name(self, n = None):
+#         if n: self.__name = n
+#         try: return self._name
+#         except AttributeError: return None
+    
+#     def sound(self, s = None):
+#         if s: self.__sound = s
+#         try: return self._sound
+#         except AttributeError: return None
+
+# class Duck(Animal):
+#     def _init_(self, **kwargs):
+#         self._type = 'Kitten'
+#         if 'type' in kwargs: del kwargs['type']
+#         super()._init_(**kwargs)
+
+#     def type(self, t = None):
+#         if t: self._type = t
+#         return self._type
+
+#     def sound(self, s = None):
+#         if s: self._sound = s
+#         return self._sound
+
+#     def quack(self):
+#         print(self._sound)
+
+#     def move(self):
+#         print(self._sound)
+
+#     def _str_(self):
+#         return f'The {self._type} named {self._name} says {self._sound}'
+    
+# def main():
+#     a1 = Duck(type = 'Kitten', name = 'Fluffy', sound = 'rwar')
+#     a2 = Duck(type = 'Duck', name = 'donald', sound = 'quack')
+#     print(a1)
+#     print(a2)
+
+# if __name__ == "_main_":
+#     main()
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------

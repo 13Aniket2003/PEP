@@ -1,4 +1,4 @@
-## 📅 Day 3 — Comprehensions, Lambda Functions, and OOP Basics
+## 📅 Day 3 — Comprehensions, Lambda Functions, and OOP Concepts
 
 ### 📋 List Comprehension
 - Created new lists by transforming elements from existing lists  
@@ -9,12 +9,22 @@
 
 ### ⚡ Lambda Functions
 - Learned about anonymous (lambda) functions for short operations  
-- Used lambda functions to reduce repetitive function calls and improve readability  
+- Used lambda functions to simplify repeated function calls  
 - Created lambda functions to return the cube of a number  
 - Applied lambda functions in sorting operations  
 
-### 🏗️ Introduction to Classes (OOP)
-- Understood the concept of classes and objects  
-- Learned how real-world entities can be represented as objects in Python  
+### 🏗️ Object-Oriented Programming (OOP)
+
+#### 📦 Classes
+- Learned how to define classes in Python  
+- Represented real-world entities as objects  
+
+#### 🔧 Methods
+- Created methods inside classes  
+- Used methods to perform operations on object data  
+
+#### 🧬 Inheritance
+- Understood how one class can inherit properties and methods from another class  
+- Practiced basic inheritance concepts for code reusability  
 
 ---
