@@ -13,7 +13,7 @@
 - Created lambda functions to return the cube of a number  
 - Applied lambda functions in sorting operations  
 
-### 🏗️ Object-Oriented Programming (OOP)
+### 🏗️ Object-Oriented Programming (OOPs)
 
 #### 📦 Classes
 - Learned how to define classes in Python  
