@@ -99,6 +99,7 @@
 # print(name.lower())
 # print(name.title())
 # print(name.find('a'))
+#---------------------------------------------------------------------------------------------------------------------------------------
 
 ### using f-string print happy new year and happy birthday if both dates are same print both and take input from user and if not same print today's date
 
@@ -117,12 +118,14 @@
 #     a=special_days(x,y,z)
 #     print(a)
 #----------------------------------------------------------------------------------------------------------------------------#
+
 ### add element to list
 
 # name=["Aniket","Bhanu","Murthy"]
 # name.append("Sadgyan")
 # print(name)
 #----------------------------------------------------------------------------------------------------------------------------#
+
 ### replace element of a list with new value 
 
 #name=["Aniket","Bhanu","Murthy","Sadgyan"]
@@ -153,6 +156,7 @@
 # b=a[::-2] ### striding that is jumping number how much gap should be there
 # print(b)
 #----------------------------------------------------------------------------------------------------------------------------#
+
 ### literals and constructors
 
 # types={'name':str,'age':int,'address':str}
@@ -162,6 +166,7 @@
 # types['language']=str
 # print(types)
 #----------------------------------------------------------------------------------------------------------------------------#
+
 ### create a dictionary of inventory which has the name of movie, cast,and total revenue generation and print all value and print any value with proper sentance
 
 # movies={"name":["KGF","KGF2","Pushpa","Pushpa2","Bahubali","Bahubali2"],

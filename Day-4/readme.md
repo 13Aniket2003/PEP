@@ -1,0 +1,2 @@
+#  to create a django file use this command ---> django-admin startproject project_name file_name to run djnago server first run the migrate by this command ---> pyhton manage.py migrate ---> here only every changes will occur or  i can manage multiple file or projects ---> then run the server ---> python manage.py runserver --> and it will redirect to local host
+# how to install and link and use git and github through vscode locally
