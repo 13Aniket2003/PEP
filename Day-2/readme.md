@@ -1,20 +1,45 @@
-#### 1. Fibbonacci series till input without loop
-#### 2. Fibbonacci series till input with loop
-#### 3. Fibbonacci series till input with recursion
-#### 4. Swap upper case to lower or vice versa
-#### 5. In a sentance whereever there is any space it will covert to '-'
-#### 6 Create a list and using loop print each of element length till the length
-#### 7. Same above question ( using "enumerate" to replace range(len(a_list)))
-#### 8. Create a list and using loop print each of element length till the length and changing its index numbers
-#### 9. Create a dictionary which stores 5 name and 5 rolls and print any values and any keys
-#### 10. Print name in upper or lower or find any character inside the name 
-#### 11. Using f-string print happy new year and happy birthday if both dates are same print both and take input from user and if not same print today's date
-#### 12. Add element to list
-#### 13. Replace element of a list with new value 
-#### 14. Checking whether the value exist or not
-#### 15. Enumerate is used to replace range or to get get index and the value both
-#### 16. Shallow copy that is making a subset or the whole set
-#### 17. Checking whether truely eleminating the element which have not added in subset
-#### 18. Striding that is jumping number how much gap should be there
-#### 19. Literals and constructors
-#### 20. Create a dictionary of inventory which has the name of movie, cast,and total revenue generation and print all value and print any value with proper sentance
+## 📅 Day 2 — Practice with Logic, Loops, and Data Structures
+
+### 🔢 Fibonacci Series Implementations
+- Generated Fibonacci series up to a given input:
+  - Without using loops  
+  - Using loops  
+  - Using recursion  
+
+### 🔠 String Manipulation
+- Converted uppercase letters to lowercase and vice versa  
+- Replaced spaces in a sentence with `-`  
+- Checked characters within a name and converted text to upper or lower case  
+
+### 📋 Working with Lists
+- Printed each element along with its length using loops  
+- Used `enumerate()` instead of `range(len(list))` to access index and value  
+- Modified list index values while printing  
+- Added new elements to a list  
+- Replaced existing elements with new values  
+- Checked whether a value exists in a list  
+
+### 📚 Dictionary Operations
+- Created a dictionary storing names and roll numbers  
+- Printed specific keys and values  
+- Built an inventory dictionary containing:
+  - Movie name  
+  - Cast  
+  - Total revenue generated  
+- Displayed all values and selected values in proper sentences  
+
+### 📅 Conditional Output Using f-Strings
+- Took user input for dates  
+- Printed "Happy New Year" and "Happy Birthday" if both dates matched  
+- Otherwise, printed today’s date using f-strings  
+
+### 🔁 Copying and Slicing Concepts
+- Learned shallow copy for creating subsets or full copies  
+- Verified whether changes affect the original list  
+- Practiced striding (jumping elements with fixed gaps in slicing)  
+
+### 🧱 Literals and Constructors
+- Understood the difference between literals and constructors in Python  
+
+---
+

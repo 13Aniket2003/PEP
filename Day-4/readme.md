@@ -1,30 +1,51 @@
-#### 1. Given the participants score sheet for your university sports day. you are required to find the runner-up score. you are given scores.store them in list and find the score of the runner-up. input format- the first contains total no. of contestants 'a'. The scond line contains an array of integers each separated by a space. constraints :-> 2<=a<=100 output-----> print the runner-up score.
-#### 2. Dictionaries having names and age you have to sort the dictionary according to age basis in decending order take min 3 name and ages
-#### 3. Replace the particular element of a string str='abcdefgh' --> str='abcdxfgh'
-#### 4. In a string if there any repeated letter print that repeated letter
-##### 5. I have a str='this is good classroom', find l from the starting 5 letter, if found true else false
-#### 6. Boolean variables
-#### 7. Insert in specific index in list
-#### 8. Using extend method using to avoid nested list
-#### 9. Use of count function
-#### 10. Index(): return the index of the first occurance. start and end index are not necessary parameter
-#### 11. Sets: it is an unordered collection data types that is iterable,mutable,and has no duplicate element. python set class represent the mathematical notion of a set.this is based on a data structure known as a hash table
-#### 12. Nested dictionary
-#### 13. Tuples
-#### 14. Shallow copy
-#### 15. Shallow copy nested list
-#### 16. Deepcopy
-#### 17. Use of eval function
-#### 18. How does eval work 
-# 1.parse python expressiona 
-# 2. compile into a byte code 
-# 3. evaluate the python expressiona 
-# 4. it will return the result
-#### 19. Exception handling
-#### 20. Exam form can be filled or not by age comparing using exception handling
-# class Error(Exception): # building own custom class for exception
-#     pass
-# class dobException(Error): # building own custom class for exception
-#     pass
-# class customgeneric(Error): # building own custom class for exception
-#     pass
+## 📅 Day 4 — Problem Solving, Data Structures, and Exception Handling
+
+### 🏃 Runner-Up Score Problem
+- Stored participant scores in a list  
+- Found the second highest (runner-up) score based on given input constraints  
+
+### 📊 Sorting Dictionaries
+- Created a dictionary with names and ages  
+- Sorted the dictionary in descending order based on age  
+
+### 🔠 String Operations
+- Replaced a specific character in a string (`'abcdefgh'` → `'abcdxfgh'`)  
+- Identified and printed repeated characters in a string  
+- Searched for a specific character within the first few letters of a string and returned true or false  
+
+### ✅ Boolean Variables
+- Learned and practiced boolean data types (`True` and `False`)  
+
+### 📋 List Methods
+- Inserted elements at specific indexes  
+- Used `extend()` method to avoid nested lists  
+- Applied `count()` to find frequency of elements  
+- Used `index()` to find the position of the first occurrence  
+
+### 📦 Sets
+- Learned about sets as unordered, mutable collections with no duplicate elements  
+- Understood how Python sets are implemented using hash tables  
+
+### 📚 Advanced Data Structures
+- Practiced nested dictionaries  
+- Worked with tuples  
+
+### 🔁 Copying Concepts
+- Shallow copy  
+- Shallow copy with nested lists  
+- Deep copy  
+
+### 🧮 Eval Function
+- Used `eval()` to evaluate Python expressions  
+- Understood how `eval()` works internally:
+  - Parsing the Python expression  
+  - Compiling into bytecode  
+  - Evaluating the expression  
+  - Returning the result  
+
+### ⚠️ Exception Handling
+- Learned basic exception handling concepts  
+- Created custom exception classes  
+- Implemented an age validation example (exam form eligibility) using custom exceptions  
+
+---
