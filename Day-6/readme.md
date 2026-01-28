@@ -68,7 +68,7 @@ Automatically generated methods include:
 ---
 
 ### 🌐 Introduction to Django Framework
-- Understood Django’s “batteries included” philosophy  
+- Understood Django’s “batteries included” approach  
 - Learned about built-in features such as:
   - User authentication  
   - Routing and views  
