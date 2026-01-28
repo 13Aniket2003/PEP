@@ -124,4 +124,3 @@ Automatically generated methods include:
        |               ------------> Django ORM     |
        ----------------------------------------------
 
----
