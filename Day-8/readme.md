@@ -1,6 +1,6 @@
 ## 📅 Day 8 — Python Logic Problems, Hackerrank Practice, and Advanced Django Templates
 
-solving Python logical problems, practicing competitive programming concepts, and building more structured Django applications with template inheritance.
+Solved Python logical problems, practicing competitive programming concepts, and building more structured Django applications with template inheritance.
 
 ---
 
