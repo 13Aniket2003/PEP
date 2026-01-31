@@ -165,4 +165,4 @@
 
 ## to link or access the layout.html in index.html or to copy or to use it as index.html we use "% extends "file_name" % "
 ## ---> we use it to access or link the file to another void file.
-
+#----------------------------------------------------------------------------------------------------------------------------------------------------
