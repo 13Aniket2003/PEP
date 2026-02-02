@@ -10,7 +10,7 @@ Today focused on setting up Tailwind CSS in the Django project and configuring i
 
 ---
 
-### 📦 Installing Required Packages
+### 📦 Installing Required Package
 - Installed the Tailwind package for Django integration  
 - Installed the reload library as recommended for future development work
 - pip install 'django-tailwind[reload]'  
