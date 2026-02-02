@@ -29,7 +29,7 @@ Tailwind, settings.py, INSTALLED_APPS, configuration, path setup
 
 ---
 
-### 📁 Creating Default Tailwind App
+### 📁 Creating Default Tailwind Apps
 
 **Keywords Used:**  
 theme app, Tailwind setup  
