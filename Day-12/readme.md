@@ -4,21 +4,6 @@ Today focused on configuring Django models, creating database tables, handling u
 
 ---
 
-### 🏗️ Django Model–View–Template (MVT) Architecture
-
-```text
---------------------------------------------------------------------------------
-|                                                                              |
-|        ORM                     Business Logic               Display Logic    |
-|     ----------   Data Flow     -----------    Data to UI    ------------     |
-|    |  Models  | ----------->  |   Views   | -------------> |  Templates |    |
-|    |----------| <-----------  |-----------| <------------- |------------|    |
-|         |                         |                                 |        |
-|      Database                 User Input                          Output     |
-|                                                                              |
---------------------------------------------------------------------------------
-
-
 **Keywords Used:**  
 Models, Views, Templates, ORM, Database, Business Logic, Display Logic  
 
@@ -113,3 +98,16 @@ urls.py, path, include
 
 ---
 
+### 🏗️ Django Model–View–Template (MVT) Architecture
+
+```text
+        --------------------------------------------------------------------------------------------
+        |                                                                                          |
+        |        ORM                     Business Logic                    Display Logic           |
+        |     -----------   Datasets     -----------    Data to Display    -------------           |
+        |    |  Models   | ---------->  |   Views   | ----------------->  |  Templates  |          |
+        |    |-----------| <----------  |-----------| <-----------------  |-------------|          |
+        |         |                         |                                   |                  |
+        |     Database                User Input                          Web Output               |
+        |                                                                                          |
+        --------------------------------------------------------------------------------------------
