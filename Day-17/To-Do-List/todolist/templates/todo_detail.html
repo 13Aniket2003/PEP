@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ list.name }}</title>
+    <style>
+        body {
+            background: #ffe6cc;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .add-item {
+            margin-bottom: 20px;
+        }
+
+        .task {
+            background: #ffe6cc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time {
+            font-size: 12px;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>{{ list.name }}</h2>
+    <a href="/" class="back">← Back to Home</a>
+
+    <div class="add-item">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="item_title" placeholder="Add todo item" required>
+            <button>Add</button>
+        </form>
+    </div>
+
+    {% for item in list.items.all %}
+    <div class="task">
+
+        {% if edit_item_id == item.id|stringformat:"s" %}
+            <!-- UPDATE MODE -->
+            <form method="post" style="width:100%; display:flex; justify-content:space-between;">
+                {% csrf_token %}
+                <input type="text" name="new_title" value="{{ item.title }}" required>
+
+                <div class="actions">
+                    <button name="update_item" value="{{ item.id }}">Save</button>
+                    <a href="{% url 'todo-detail' list.id %}">Cancel</a>
+                </div>
+            </form>
+        {% else %}
+            <!-- NORMAL VIEW -->
+            <div>
+                <strong>{{ item.title }}</strong><br>
+                <span class="time">
+                    {{ item.created_at|date:"d M Y, H:i" }}
+                </span>
+            </div>
+
+            <div class="actions">
+                <a href="?edit={{ item.id }}">
+                    <button type="button">Update</button>
+                </a>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <button name="delete_item" value="{{ item.id }}">Delete</button>
+                </form>
+            </div>
+        {% endif %}
+
+    </div>
+    {% empty %}
+        <p>No tasks added yet.</p>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
