@@ -50,13 +50,29 @@ def signup_view(request):
 
 
 
+from django.shortcuts import render, redirect
+from django.views import View
+from .models import TodoList
+
+
 class HomeView(View):
+
     def get(self, request):
         lists = TodoList.objects.all()
-        return render(request, 'home.html', {'lists': lists})
+        edit_list_id = request.GET.get("edit")  # for update mode
+
+        return render(
+            request,
+            'home.html',
+            {
+                'lists': lists,
+                'edit_list_id': edit_list_id
+            }
+        )
 
     def post(self, request):
-        # ADD TODO LIST 
+
+        # ADD TODO LIST
         if 'list_name' in request.POST:
             list_name = request.POST.get('list_name', '').strip()
 
@@ -65,9 +81,20 @@ class HomeView(View):
 
         # DELETE TODO LIST
         elif 'delete_list' in request.POST:
-            TodoList.objects.filter(id=request.POST.get('delete_list')).delete()
+            TodoList.objects.filter(
+                id=request.POST.get('delete_list')
+            ).delete()
+
+        # UPDATE TODO LIST (SAVE)
+        elif 'update_list' in request.POST:
+            list_id = request.POST.get('update_list')
+            new_name = request.POST.get('new_name', '').strip()
+
+            if new_name:
+                TodoList.objects.filter(id=list_id).update(name=new_name)
 
         return redirect('home')
+
 
 
     

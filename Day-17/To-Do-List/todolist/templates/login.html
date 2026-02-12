@@ -1,110 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
 
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(to bottom, #fff3e0, #ffe0b2);
-            font-family: Arial, sans-serif;
-        }
+<style>
+* { box-sizing: border-box; }
 
-        .container {
-            background: #ffffff;
-            padding: 30px;
-            width: 320px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6A11CB, #FC4A1A);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ff7a00;
-        }
+.card {
+    background: #1F2933;
+    width: 100%;
+    max-width: 360px;
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
 
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
+h2 {
+    text-align: center;
+    color: #F9FAFB;
+    margin-bottom: 24px;
+}
 
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background: white;
-        }
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #CBD5E1;
+    font-weight: bold;
+}
 
-        input:focus {
-            outline: none;
-            border-color: #ff7a00;
-        }
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 1px solid #374151;
+    background: #111827;
+    color: #F9FAFB;
+}
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #ff7a00;
-            border: none;
-            color: white;
-            font-size: 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+input:focus {
+    outline: none;
+    border-color: #FC4A1A;
+}
 
-        button:hover {
-            background: #e56b00;
-        }
+button {
+    width: 100%;
+    padding: 14px;
+    background: #FC4A1A;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+button:hover {
+    background: #FF6A3D;
+}
 
-        li {
-            background: #ffe0cc;
-            color: #cc5200;
-            padding: 8px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
+.link {
+    text-align: center;
+    margin-top: 18px;
+    color: #CBD5E1;
+}
 
-        .link {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .link a {
-            text-decoration: none;
-            color: #ff7a00;
-            font-weight: bold;
-        }
-    </style>
+.link a {
+    color: #A78BFA;
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="card">
     <h2>Login</h2>
 
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
-    <form method="POST">
+    <form method="post">
         {% csrf_token %}
 
         <label>Username</label>
@@ -113,11 +98,11 @@
         <label>Password</label>
         <input type="password" name="password" required>
 
-        <button type="submit">Login</button>
+        <button>Login</button>
     </form>
 
     <div class="link">
-        <p>New user? <a href="{% url 'signup' %}">Sign up</a></p>
+        New user? <a href="{% url 'signup' %}">Sign up</a>
     </div>
 </div>
 

@@ -1,115 +1,225 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ list.name }}</title>
-    <style>
-        body {
-            background: #ffe6cc;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ list.name }}</title>
 
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 6px;
-        }
+<style>
+* { box-sizing: border-box; }
 
-        h2 {
-            margin-top: 0;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6A11CB, #FC4A1A);
+    padding: 32px 16px;
+}
 
-        .back {
-            display: inline-block;
-            margin-bottom: 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* LIST TITLE (CENTER ONLY THIS) */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
 
-        .add-item {
-            margin-bottom: 20px;
-        }
+/* BACK BUTTON (LEFT, NOT CENTERED) */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    background: #FC4A1A;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
 
-        .task {
-            background: #ffe6cc;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.back-btn:hover {
+    background: #FF6A3D;
+    transform: translateY(-2px);
+}
 
-        .time {
-            font-size: 12px;
-        }
+/* WRAPPER */
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
 
-        input {
-            padding: 5px;
-        }
+/* COMMON BUTTONS */
+.btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
 
-        button {
-            padding: 5px 10px;
-            cursor: pointer;
-        }
+.btn-orange {
+    background: #FC4A1A;
+    color: white;
+}
 
-        .actions {
-            display: flex;
-            gap: 5px;
-        }
-    </style>
+.btn-orange:hover {
+    background: #FF6A3D;
+    transform: translateY(-2px);
+}
+
+.btn-save {
+    background: #22C55E;
+    color: white;
+}
+
+.btn-save:hover {
+    background: #16A34A;
+    transform: translateY(-2px);
+}
+
+.btn-cancel {
+    background: #7C3AED;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-cancel:hover {
+    background: #8B5CF6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(124,58,237,0.45);
+}
+
+
+/* ADD TASK */
+.add-box {
+    display: flex;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(31,41,51,0.75);
+    backdrop-filter: blur(10px);
+    margin-bottom: 22px;
+}
+
+.add-box input {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(17,17,17,0.85);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* TASK CARD */
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 18px;
+    background: rgba(31,41,51,0.75);
+    transition: all 0.25s ease;
+}
+
+.task-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-2px);
+}
+
+.task-title {
+    color: #F9FAFB;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.task-time {
+    font-size: 12px;
+    color: #CBD5E1;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(17,17,17,0.85);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .task-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .actions {
+        align-self: flex-end;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-    <h2>{{ list.name }}</h2>
-    <a href="{% url 'home' %}" class="back">← Back to Home</a>
+    <!-- ONLY TITLE CENTERED -->
+    <h1>{{ list.name }}</h1>
 
-    <div class="add-item">
-        <form method="post">
+    <!-- BACK BUTTON NORMAL -->
+    <a href="{% url 'home' %}" class="back-btn">← Back</a>
+
+    <!-- ADD TASK -->
+    <div class="add-box">
+        <form method="post" style="display:flex; gap:12px; width:100%;">
             {% csrf_token %}
-            <input type="text" name="item_title" placeholder="Add todo item" required>
-            <button>Add</button>
+            <input type="text" name="item_title" placeholder="New task" required>
+            <button class="btn btn-orange">Add</button>
         </form>
     </div>
 
     {% for item in list.items.all %}
-    <div class="task">
+    <div class="task-card">
 
         {% if edit_item_id == item.id|stringformat:"s" %}
-            <form method="post" style="width:100%; display:flex; justify-content:space-between;">
-                {% csrf_token %}
-                <input type="text" name="new_title" value="{{ item.title }}" required>
-
-                <div class="actions">
-                    <button name="update_item" value="{{ item.id }}">Save</button>
-                    <a href="{% url 'todo-detail' list.id %}">Cancel</a>
-                </div>
-            </form>
+        <form method="post" style="display:flex; gap:10px; width:100%;">
+            {% csrf_token %}
+            <input class="edit-input" type="text" name="new_title" value="{{ item.title }}" required>
+            <button class="btn btn-save" name="update_item" value="{{ item.id }}">Save</button>
+            <a href="{% url 'todo-detail' list.id %}" class="btn btn-cancel">Cancel</a>
+        </form>
         {% else %}
-            <div>
-                <strong>{{ item.title }}</strong><br>
-                <span class="time">
-                    {{ item.created_at|date:"d M Y, H:i" }}
-                </span>
+        <div>
+            <div class="task-title">{{ item.title }}</div>
+            <div class="task-time">
+                {{ item.created_at|date:"d M Y, H:i" }}
             </div>
+        </div>
 
-            <div class="actions">
-                <a href="?edit={{ item.id }}">
-                    <button type="button">Update</button>
-                </a>
-
-                <form method="post">
-                    {% csrf_token %}
-                    <button name="delete_item" value="{{ item.id }}">Delete</button>
-                </form>
-            </div>
+        <div class="actions">
+            <a href="?edit={{ item.id }}" class="btn btn-orange">Update</a>
+            <form method="post">
+                {% csrf_token %}
+                <button class="btn btn-orange" name="delete_item" value="{{ item.id }}">Delete</button>
+            </form>
+        </div>
         {% endif %}
 
     </div>
     {% empty %}
-        <p>No tasks added yet.</p>
+        <p style="color:white; text-align:center;">No tasks added yet.</p>
     {% endfor %}
 
 </div>
