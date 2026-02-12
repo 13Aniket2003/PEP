@@ -64,7 +64,7 @@
 <div class="container">
 
     <h2>{{ list.name }}</h2>
-    <a href="/" class="back">← Back to Home</a>
+    <a href="{% url 'home' %}" class="back">← Back to Home</a>
 
     <div class="add-item">
         <form method="post">
@@ -78,7 +78,6 @@
     <div class="task">
 
         {% if edit_item_id == item.id|stringformat:"s" %}
-            <!-- UPDATE MODE -->
             <form method="post" style="width:100%; display:flex; justify-content:space-between;">
                 {% csrf_token %}
                 <input type="text" name="new_title" value="{{ item.title }}" required>
@@ -89,7 +88,6 @@
                 </div>
             </form>
         {% else %}
-            <!-- NORMAL VIEW -->
             <div>
                 <strong>{{ item.title }}</strong><br>
                 <span class="time">

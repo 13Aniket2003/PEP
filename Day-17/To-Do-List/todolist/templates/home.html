@@ -52,7 +52,8 @@
 <h2>Add Todo List</h2>
 
 <div class="add-box">
-    <form method="post">
+    
+    <form method="post" action="{% url 'home' %}">
         {% csrf_token %}
         <input type="text" name="list_name" placeholder="Todo list name" required>
         <button>Add</button>
@@ -65,7 +66,8 @@
         {{ list.name }}
     </a>
 
-    <form method="post">
+   
+    <form method="post" action="{% url 'home' %}">
         {% csrf_token %}
         <button name="delete_list" value="{{ list.id }}">Delete</button>
     </form>
