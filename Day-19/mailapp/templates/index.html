@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Mail App</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6A11CB, #FC4A1A);
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            background: rgba(31,41,51,0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #F9FAFB;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(17,17,17,0.85);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            outline: none;
+            font-size: 15px;
+            transition: all 0.25s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #FC4A1A;
+            box-shadow: 0 0 0 3px rgba(252,74,26,0.35);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            background: #FC4A1A;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #FF6A3D;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(252,74,26,0.45);
+        }
+
+        .result {
+            margin-top: 18px;
+            padding: 12px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #ffffff;
+            background: rgba(34,197,94,0.85);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>📧 Django Mail App</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="address">To</label>
+        <input id="address" type="email" name="address" placeholder="recipient@example.com" required>
+
+        <label for="subject">Subject</label>
+        <input id="subject" type="text" name="subject" placeholder="Email subject" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+        <input type="submit" value="Send Mail 🚀">
+    </form>
+
+    {% if result %}
+        <p class="result">{{ result }}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
