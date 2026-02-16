@@ -47,11 +47,7 @@ h1 {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(252,74,26,0.45);
 }
-{% comment %} .btn-orange:hover {
-    background: #FF6A3D;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(252,74,26,0.45);
-} {% endcomment %}
+
 .btn-save {
     background: #22C55E;
     color: white;
@@ -165,6 +161,15 @@ h1 {
                 border-radius: 12px; 
             ">
         Logout
+    </button>
+</form>
+
+<form action="{% url 'contact' %}" method="get"
+      style="position:absolute; top:24px; right:140px;">
+    <button type="submit"
+            class="btn btn-orange"
+            style="padding:10px 18px; font-size:14px; border-radius:12px;">
+        Contact Us
     </button>
 </form>
 
